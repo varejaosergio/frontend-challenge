@@ -27,9 +27,9 @@ botaoEntrar.addEventListener("click", async function login (event) {
       if (token !== undefined && token !== null) {
         sessionStorage.setItem('token', token)
         window.location.href = userPage;
-        setSpinner();        
+        //setSpinner();                
       } else {
-        removeSpinner();
+        //removeSpinner();
         setErrorMessage('Usuário ou senha incorretos');
       }    
     })    
