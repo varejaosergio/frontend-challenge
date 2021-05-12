@@ -1,7 +1,5 @@
-const axios = require("axios");
-const style = require("./style.scss");
-
 const userPage = './lista-usuarios.html'
+
 var botaoEntrar = document.querySelector("#entrar");
 
 botaoEntrar.addEventListener("click", async function login (event) {
@@ -16,14 +14,14 @@ botaoEntrar.addEventListener("click", async function login (event) {
   var loginObj = {"email" : email, "password" : password };  
   var loginJSON = JSON.stringify (loginObj);
   
-  axios.post('https://reqres.in/api/login', {
-    entrar: loginJSON
+  await fetch('https://reqres.in/api/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: [loginJSON]
   })
-    .then((response) => {
-      console.log(response);
-    }, (error) => {
-      console.log(error);
-    })
+    .then((response) => response.json())
     .then((data) => {
       let token = data.token;
       if (token !== undefined && token !== null) {
@@ -39,10 +37,10 @@ botaoEntrar.addEventListener("click", async function login (event) {
 
 function removeSpinner() {
   document.querySelectorAll('#entrar')[0].style.display = 'block';
-  document.querySelectorAll('.smooth-spinner')[0].style.display = 'none';
+  //document.querySelectorAll('.smooth-spinner')[0].style.display = 'none';
 }
 
 function setSpinner() {
   document.querySelectorAll('#entrar')[0].style.display = 'none';
-  document.querySelectorAll('.smooth-spinner')[0].style.display = 'block';
+  //document.querySelectorAll('.smooth-spinner')[0].style.display = 'block';
 }
