@@ -1,0 +1,107 @@
+
+.content {
+    font-family:"Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+    margin-top:95px;
+    max-width:1280px;
+    margin-left:auto;
+    margin-right:auto;
+    height:calc(100vh - 195px);
+}
+@-webkit-keyframes spinner{ to {
+        -webkit-transform:rotate(360deg);
+        transform:rotate(360deg)
+    }
+}
+@keyframes spinner{ to {
+        -webkit-transform:rotate(360deg);
+        transform:rotate(360deg)
+    }
+}
+
+.content {
+    display:-webkit-box;    
+    display:flex;
+    -webkit-box-align:center;   
+    align-items:center;
+    -webkit-box-pack:center;    
+    justify-content:center
+}
+    
+.container {
+    background:#FFFFFF;
+    border-radius:10px;
+    padding:25px 60px;
+    text-align:center;
+    width:300px
+}
+
+h1 {    
+    font-size:32px;
+    color:#174DBA;
+    margin:0px;
+    margin-bottom:40px;
+    font-weight:bold;
+}
+
+#login{
+    text-align:left;    
+}
+
+input, label {
+    font-size:16px;      
+}
+
+input{    
+    border:1.5px solid #174DBA;    
+    width:92%;
+    padding:0px 10px;
+    border-radius: 5px;
+    height: 35px;
+    margin-bottom:20px;
+}
+
+label {
+    color:#174DBA;    
+    font-weight: normal; 
+}
+
+#entrar {
+    background:#174DBA;
+    font-size: 16px;
+    font-weight: bold;
+    color:#EFF0F3;
+    border:1.5px solid #174DBA;
+    border-radius: 5px;    
+    margin-top:30px;
+    width:100%;
+    position:relative;
+    height: 40px;
+}
+
+.login-error{
+    font-size:14px;   
+    color:#f06565;
+    opacity:0;
+    margin:0px;
+    margin-top:15px
+}
+
+.spinner{
+    display:none
+}
+.spinner:after{
+    content:"";
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    width:25px;
+    height:25px;
+    position:absolute;
+    top:calc(50% - 12.5px);
+    left:calc(50% - 12.5px);
+    border-radius:50%;
+    border-top:4px solid white;
+    border-left:4px solid white;
+    border-right:4px solid rgba(255, 255, 255, 0);
+    -webkit-animation:spinner 0.6s linear infinite;
+    animation:spinner 0.6s linear infinite
+}

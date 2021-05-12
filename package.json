@@ -1,0 +1,31 @@
+{
+  "name": "frontend-challenge",
+  "version": "1.0.0",
+  "description": "teste",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varejaosergio/frontend-challenge-1.git"
+  },
+  "author": "Sérgio Varejão",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/varejaosergio/frontend-challenge-1/issues"
+  },
+  "homepage": "https://github.com/varejaosergio/frontend-challenge-1#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.1.0",
+    "webpack": "^5.37.0"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Challenge</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/login.css">
+</head>
+<body class="main">    
+    <header>
+        <img class="logo" src="assets/logo-uppersoft.svg" />
+    </header>
+    <section class="content">   
+        <div class="container">
+            <h1>Acessar</h1>
+            <form action="/login" method="POST" id="login">   
+                <label for="email">E-mail</label><br />
+                <input type="email" name="email" placeholder="seuemail@dominio.com" required>
+                <label for="senha">Senha</label><br />
+                <input type="password" name="senha" required/>                
+                <input type="submit" value="ENTRAR" id="entrar"/>                
+            <p class="login-error">Usuário ou senha inválidos</p>
+            </form>
+        </div>
+    </section>    
+    <script type="module" src="src/js/index.js"></script>
+</body>
+</html>
