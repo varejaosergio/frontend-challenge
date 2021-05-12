@@ -1,5 +1,5 @@
-axios = require("axios");
-style = require("./style.scss");
+const axios = require("axios");
+const style = require("./style.scss");
 
 const userPage = './lista-usuarios.html'
 var botaoEntrar = document.querySelector("#entrar");
