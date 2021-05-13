@@ -5,6 +5,7 @@ var botaoEntrar = document.querySelector("#entrar");
 botaoEntrar.addEventListener("click", async function login (event) {
   
   event.preventDefault();
+  setSpinner();
 
   var form = document.querySelector("#login");
 
@@ -26,8 +27,7 @@ botaoEntrar.addEventListener("click", async function login (event) {
     let token = data.token;
     if (token !== undefined && token !== null) {
       sessionStorage.setItem('token', token)
-      window.location.href = userPage;
-      setSpinner();                
+      window.location.href = userPage;                      
     } else {
       removeSpinner();
       setErrorMessage('Usuário ou senha incorretos');
@@ -47,10 +47,10 @@ function setErrorMessage(message) {
 
 function removeSpinner() {
   document.querySelectorAll('#entrar')[0].style.display = 'block';
-  //document.querySelectorAll('.smooth-spinner')[0].style.display = 'none';
+  document.querySelectorAll('.spinner')[0].style.display = 'none';
 }
 
 function setSpinner() {
   document.querySelectorAll('#entrar')[0].style.display = 'none';
-  //document.querySelectorAll('.smooth-spinner')[0].style.display = 'block';
+  document.querySelectorAll('.spinner')[0].style.display = 'block';
 }
