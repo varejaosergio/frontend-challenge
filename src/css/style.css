@@ -21,3 +21,15 @@ header {
     width: auto;
     align-items: center;
 }
+
+@media (width: 375px) {
+    header {
+        height: 50px;
+        width: 33%;
+        position: fixed;
+        align-items: center;
+        top: 0;
+        display: flex;    
+        justify-content: center;
+    }
+}
