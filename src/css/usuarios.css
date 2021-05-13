@@ -20,7 +20,8 @@ h1{
 
 #list-container {
     display: -ms-grid;
-    display: grid;    
+    display: grid;
+    -ms-grid-rows: auto auto auto;
     grid-template-rows: auto auto auto;
     grid-gap: 50px;
     -ms-grid-columns: 100%;
@@ -29,28 +30,16 @@ h1{
     margin-left: 60px;
 }
 @media (min-width: 768px) {
-    #list-container { 
-    display:flex;   
-    grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+    #list-container {
+    -ms-grid-columns: calc(50% - 15px) calc(50% - 15px);
+    grid-template-columns: calc(50% - 15px) calc(50% - 15px); 
     } 
 }
 @media (min-width: 375px) {
-   
-    h1 {
-        align-items:  center;
-        margin: 0px;
-        margin-bottom: 10px;                
-    }
     #list-container {
-    display:inline-block;
+    -ms-grid-columns: calc(33% - 15px) calc(33% - 15px) calc(33% - 15px);
     grid-template-columns: calc(33% - 15px) calc(33% - 15px) calc(33% - 15px); 
-    grid-template-rows: center;
-    margin-left: 0px;
-    width: 375px;
     } 
-    #list-container .user-item {
-        margin-bottom: 15px;
-    }     
 }
 #list-container .user-item {
     text-align: center;
@@ -95,8 +84,9 @@ h1{
   padding-right: 50px;
   width: 1200px; 
 }
-  @media (min-width: 375px) {
+  @media (min-width: 768px) {
     #list-info {
-      text-align: justify;
+      padding-right: 10px;
+      text-align: right; 
     } 
 }

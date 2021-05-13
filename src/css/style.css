@@ -22,13 +22,3 @@ header {
     align-items: center;
 }
 
-@media (min-width: 375px) {
-    header { 
-        width: 33%;               
-        position: fixed;
-        align-items: center;
-        top: 0;
-        display: flex;    
-        justify-content: center;
-    }
-}
