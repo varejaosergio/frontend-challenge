@@ -51,9 +51,8 @@ h1{
     #list-container .user-item {
         margin-bottom: 15px;
     }
-    #list-info { 
-        width: 33%;       
-        align-items: flex-start; 
+    #list-info {                
+        align-items: left; 
     } 
 }
 #list-container .user-item {

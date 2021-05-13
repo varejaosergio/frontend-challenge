@@ -22,10 +22,8 @@ header {
     align-items: center;
 }
 
-@media (width: 375px) {
-    header {
-        height: 50px;
-        width: 33%;
+@media (min-width: 375px) {
+    header {                
         position: fixed;
         align-items: center;
         top: 0;
