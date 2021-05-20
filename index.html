@@ -5,24 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Challenge</title>
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/login.css">
+    <link rel="stylesheet" href="./styles/style.css">    
 </head>
 <body class="main">    
-    <header>
-        <img class="logo" src="assets/logo-uppersoft.svg" />
+    <header class="header">
+        <img class="header__img" src="assets/logo-uppersoft.svg" />
     </header>
-    <section class="content">   
-        <div class="container">
-            <h1>Acessar</h1>
-            <form action="/login" method="POST" id="login">   
-                <label for="email">E-mail</label><br />
-                <input type="email" name="email" placeholder="seuemail@dominio.com" required>
-                <label for="senha">Senha</label><br />
-                <input type="password" name="senha" required/>                
-                <input type="submit" value="ENTRAR" id="entrar"/>
-                <span class="spinner"></span>               
-            <p class="login-error">Usuário ou senha inválidos</p>
+    <section class="login">   
+        <div class="login__container container">
+            <h1 class="container__title">Acessar</h1>
+            <form class="container__form form" action="/login" method="POST" id="form__login">   
+                <label class="form__label" for="email">E-mail</label><br />
+                <input class="form__input" type="email" name="email" placeholder="seuemail@dominio.com" required>
+                <label class="form__label" for="senha">Senha</label><br />
+                <input class="form__input" type="password" name="senha" required/>                
+                <input class="form__entrar" type="submit" value="ENTRAR" id="form__entrar"/>
+                <span class="form__spinner"></span>               
+            <p class="form__error">Usuário ou senha inválidos</p>
             </form>
         </div>
     </section>    

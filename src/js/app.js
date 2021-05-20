@@ -1,13 +1,13 @@
 const userPage = './lista-usuarios.html'
 
-var botaoEntrar = document.querySelector("#entrar");
+var botaoEntrar = document.querySelector("#form__entrar");
 
 botaoEntrar.addEventListener("click", async function login (event) {
   
   event.preventDefault();
   setSpinner();
 
-  var form = document.querySelector("#login");
+  var form = document.querySelector("#form__login");
 
   var email = form.email.value;
   var password = form.senha.value;
@@ -37,20 +37,20 @@ botaoEntrar.addEventListener("click", async function login (event) {
 });
 
 function setErrorMessage(message) {
-  document.querySelectorAll('.login-error')[0].textContent = message;
-  document.querySelectorAll('.login-error')[0].style.opacity = '1';
+  document.querySelectorAll('.form__error')[0].textContent = message;
+  document.querySelectorAll('.form__error')[0].style.opacity = '1';
 
   setTimeout(() => {
-    document.querySelectorAll('.login-error')[0].textContent = ' ';
+    document.querySelectorAll('.form__error')[0].textContent = ' ';
   }, 2000);
 }
 
 function removeSpinner() {
-  document.querySelectorAll('#entrar')[0].style.display = 'block';
-  document.querySelectorAll('.spinner')[0].style.display = 'none';
+  document.querySelectorAll('#form__entrar')[0].style.display = 'block';
+  document.querySelectorAll('.form__spinner')[0].style.display = 'none';
 }
 
 function setSpinner() {
-  document.querySelectorAll('#entrar')[0].style.display = 'none';
-  document.querySelectorAll('.spinner')[0].style.display = 'block';
+  document.querySelectorAll('#form__entrar')[0].style.display = 'none';
+  document.querySelectorAll('.form__spinner')[0].style.display = 'block';
 }

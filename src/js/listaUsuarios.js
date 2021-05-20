@@ -20,24 +20,24 @@ fetch('https://reqres.in/api/users?page=1', {
     let userCard = '';        
     for (let i = 0; i < users.length; i++) {
     userCard +=
-        '<div class="user-item">' +
-        '<img class="user-img" src=' +
+        '<div class="user__item user">' +
+        '<img class="user__img" src=' +
         users[i].avatar +
         '>' +
-        '<p class="user-name">' +
+        '<p class="user__name">' +
         users[i].first_name +
         ' ' +
         users[i].last_name +
         '</p>' +
-        '<p class="user-email">' +
+        '<p class="user__email">' +
         users[i].email +
         '</p>' +
-        '<img class="edit-icon" src="./assets/icon-edit.svg">' +
+        '<img class="user__edit-icon" src="./assets/icon-edit.svg">' +
         '</div>';
     }
-    const container = document.querySelector('#list-container');
+    const container = document.querySelector('#list__container');
     container.insertAdjacentHTML('beforeend', userCard);
-    const displayInfo = document.querySelector('#list-info');
+    const displayInfo = document.querySelector('#list__info');
     displayInfo.insertAdjacentHTML('beforeend', displayInfoString);    
   })
   .catch(error => console.error(error))
