@@ -145,19 +145,23 @@
   text-align: center;
   position: relative;
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   background: #FFFFFF;
   border-radius: 10px;
-  padding: 20px 0px;
   width: 96%;
 }
-.list #list__container .user__img {
-  height: 75px;
-  width: 75px;
+.list #list__container .user__figure {
+  padding-top: 40px;
+  padding-bottom: 0px;
+  justify-content: center;
+}
+.list #list__container .user__figure .figure__img {
+  height: 80px;
+  width: 80px;
   border-radius: 100%;
 }
 .list #list__container .user__edit-icon {
-  height: 15px;
+  height: 20px;
   width: auto;
   position: absolute;
   top: 15px;
@@ -165,14 +169,14 @@
 }
 .list #list__container .user__name {
   font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 16px;
   color: #174DBA;
-  font-weight: 500;
 }
 .list #list__container .user__email {
+  padding-bottom: 20px;
   font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 16px;
   color: #505050;
 }
@@ -183,6 +187,7 @@
   text-align: right;
   padding: 0px;
   width: 95%;
+  font-weight: bold;
 }
 
 @media (min-width: 770px) {
@@ -249,10 +254,14 @@
     margin-top: 0px;
     background: #FFFFFF;
     border-radius: 10px;
-    padding: 15px 3px;
     width: 95%;
   }
-  .main .list #list__container .user__img {
+  .main .list #list__container .user__figure {
+    padding-top: 20px;
+    padding-bottom: 0px;
+    justify-content: center;
+  }
+  .main .list #list__container .user__figure .figure__img {
     height: 40px;
     width: 40px;
     border-radius: 100%;
@@ -265,14 +274,15 @@
     right: 5px;
   }
   .main .list #list__container .user__name {
+    padding-top: 0px;
     font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 10px;
     color: #174DBA;
   }
   .main .list #list__container .user__email {
     font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 10px;
     color: #505050;
   }
@@ -283,6 +293,7 @@
     text-align: right;
     padding: 0px;
     width: 95%;
+    font-weight: bold;
   }
 }
 @media (min-width: 770px) {

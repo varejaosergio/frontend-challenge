@@ -21,9 +21,10 @@ fetch('https://reqres.in/api/users?page=1', {
     for (let i = 0; i < users.length; i++) {
     userCard +=
         '<div class="user__item user">' +
-        '<img class="user__img" src=' +
+        '<div class="user__figure figure">' +
+        '<img class="figure__img" src=' +
         users[i].avatar +
-        '>' +
+        '>' + '</div>' +
         '<p class="user__name">' +
         users[i].first_name +
         ' ' +

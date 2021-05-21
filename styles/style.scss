@@ -169,19 +169,27 @@ $dark: #505050;
             text-align: center;
             position: relative;
             margin-left: 20px;
-            margin-top: 20px;
+            margin-top: 10px;
             background: $white;
             border-radius: 10px;
-            padding: 20px 0px;
             width: 96%;
             
-            &__img {
-                height: 75px;
-                width: 75px;
-                border-radius: 100%; 
+            &__figure {
+                padding-top: 40px;
+                padding-bottom: 0px;
+                justify-content: center;
+
+                .figure{
+                    &__img{                        
+                        height: 80px;
+                        width: 80px;
+                        border-radius: 100%;
+                    }
+                }   
             }
+            
             &__edit-icon {
-                height: 15px;
+                height: 20px;
                 width: auto;
                 position: absolute;
                 top: 15px;
@@ -189,14 +197,14 @@ $dark: #505050;
             }
             &__name {
                 font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-                font-weight: normal;
+                font-weight: bold;
                 font-size: 16px;
                 color: $primary;
-                font-weight: 500;
             }
             &__email {
+                padding-bottom: 20px;
                 font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-                font-weight: normal;
+                font-weight: bold;
                 font-size: 16px;
                 color: $dark; 
             }
@@ -208,7 +216,8 @@ $dark: #505050;
         font-size: 16px;
         text-align: right;
         padding: 0px;
-        width: 95%; 
+        width: 95%;
+        font-weight: bold; 
     }
 }
 
@@ -278,16 +287,22 @@ $dark: #505050;
                     margin-right: 3px;
                     margin-top: 0px;
                     background: $white;
-                    border-radius: 10px;
-                    padding: 15px 3px;
+                    border-radius: 10px;                    
                     width: 95%;
+                    &__figure {
+                        padding-top: 20px;
+                        padding-bottom: 0px;
+                        justify-content: center;
 
-                    &__img{
-                        height: 40px;
-                        width: 40px;
-                        border-radius: 100%;
+                        .figure{
+                            &__img{                        
+                                height: 40px;
+                                width: 40px;
+                                border-radius: 100%;
+                            }
+                        }   
                     }
-                
+
                     &__edit-icon {
                         height: 8px;
                         width: auto;
@@ -296,14 +311,15 @@ $dark: #505050;
                         right: 5px; 
                     }
                     &__name {
+                        padding-top: 0px;
                         font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-                        font-weight: normal;
+                        font-weight: bold;
                         font-size: 10px;
                         color: $primary;                    
                     }
                     &__email {
                         font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-                        font-weight: normal;
+                        font-weight: bold;
                         font-size: 10px;
                         color: $dark; 
                     }
@@ -315,7 +331,8 @@ $dark: #505050;
                 font-size: 12px;
                 text-align: right;
                 padding: 0px;
-                width: 95%; 
+                width: 95%;
+                font-weight: bold; 
             }
         }
     }    
