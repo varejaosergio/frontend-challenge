@@ -3,12 +3,25 @@ $gray: #EFF0F3;
 $white: #FFFFFF;
 $dark: #505050;
 
+@mixin for-phone-only {
+    @media (max-width: 767.98px) { @content; }
+}
+
+@mixin for-tablet-only {
+    @media (min-width: 768px) and (max-width: 1199.98) { @content; }
+}
+
+@mixin for-desktop-only {
+    @media (min-width: 1200px) { @content; }
+}
 .main {
     margin: 0;
     background: $gray;
 }
 
 .header {
+    display: flex;    
+    justify-content: center;
     background: $primary;
     z-index: 1;
     width: 100%;
@@ -16,8 +29,18 @@ $dark: #505050;
     position: fixed;
     align-items: center;
     top: 0;
-    display: flex;    
-    justify-content: center;
+    
+    @include for-phone-only {
+        display: flex;    
+        justify-content: center;
+        background: $primary;
+        z-index: 1;
+        width: 100%;
+        height: 65px;
+        position: fixed;
+        align-items: center;
+        top: 0;
+    }
 
     &__img {
         height: 35px;
@@ -29,7 +52,7 @@ $dark: #505050;
 .login {
     font-family:"Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
     margin-top:160px;
-    max-width:1280px;
+    max-width:100%;
     margin-left:auto;
     margin-right:auto;
     height:calc(100vh - 195px);
@@ -53,102 +76,114 @@ $dark: #505050;
     &__container {
         background:$white;
         border-radius:10px;
-        padding:25px 60px;
+        padding:5px 10px;
         text-align:center;
         justify-content: center;
-        width:300px;
+        width:25%;  
+    }
+    .container {
+        &__title {    
+            font-size:38px;
+            color:$primary;
+            margin:20px 0px;
+            margin-bottom:40px;
+            font-weight:bold;
+        }
 
-        .container {
-            &__title {    
-                font-size:48px;
-                color:$primary;
-                margin:0px;
-                margin-bottom:40px;
-                font-weight:bold;
-            }
-
-            &__form { 
-                text-align: left;
-                
-                .form {
-                    &__input, &__label {
-                        font-size:16px;          
-                    }
-                    
-                    &__input{    
-                        border:1.5px solid $primary;    
-                        width:92%;
-                        padding:0px 10px;
-                        border-radius: 5px;
-                        height: 35px;
-                        margin-bottom:20px;
-                    }
-                    
-                    &__label {
-                        color:$primary;    
-                        font-weight: normal; 
-                    }
-                    
-                    &__entrar {
-                        background:$primary;
-                        font-size: 16px;
-                        font-weight: bold;
-                        color:$gray;
-                        border:1.5px solid $primary;
-                        border-radius: 5px;    
-                        margin-top:30px;
-                        width:100%;
-                        position:relative;
-                        height: 40px;
-                    }
-                    
-                    &__error{
-                        font-size:14px;   
-                        color:#f06565;
-                        opacity:0;
-                        margin:0px;
-                        margin-top:15px
-                    }
-
-                    &__spinner{
-                        display:none;
-
-                        &:after{
-                            content:"";
-                            -webkit-box-sizing:border-box;
-                            box-sizing:border-box;
-                            width:25px;
-                            height:25px;
-                            position:absolute;
-                            top:calc(50% - 12.5px);
-                            left:calc(50% - 12.5px);
-                            border-radius:50%;
-                            border-top:4px solid $white;
-                            border-left:4px solid $white;
-                            border-right:4px solid $dark;
-                            -webkit-animation:spinner 0.6s linear infinite;
-                            animation:spinner 0.6s linear infinite
-                        }
-                    }
-                    
-                }
-            } 
-
+        &__form { 
+            text-align: left;
+        }
+        @include for-phone-only {
+            width: 80%;
+            margin: 0px;
+            flex-wrap: wrap;
         }
         
-    }
+        .form {
+            &__input, &__label {
+                font-size:16px;
+                margin-left: 11%;          
+            }
+            
+            &__input{
+                border:2px solid $primary;    
+                width:75%;
+                border-radius: 5px;
+                height: 35px;
+                margin-bottom:20px;
+            }
+            
+            &__label {
+                color:$primary;    
+                font-weight: bold; 
+            }
+            
+            &__entrar {
+                background:$primary;
+                font-size: 16px;
+                font-weight: bold;
+                color:$gray;
+                border:2px solid $primary;
+                border-radius: 5px;    
+                margin-top:20px;
+                margin-left: 12%;
+                margin-bottom: 0px;
+                width:75%;
+                position:relative;
+                height: 40px;
+            }
+            
+            &__error{
+                font-size:14px;   
+                color:#f06565;
+                opacity:0;
+                margin-left: 12%;
+                margin-top:15px;
+                margin-bottom: 15px;
+            }
 
+            &__spinner{
+                display:none;
+
+                &:after{
+                    content:"";
+                    -webkit-box-sizing:border-box;
+                    box-sizing:border-box;
+                    width:25px;
+                    height:25px;
+                    position:absolute;
+                    top:calc(50% - 12.5px);
+                    left:calc(50% - 12.5px);
+                    border-radius:50%;
+                    border-top:4px solid $white;
+                    border-left:4px solid $white;
+                    border-right:4px solid $dark;
+                    -webkit-animation:spinner 0.6s linear infinite;
+                    animation:spinner 0.6s linear infinite
+                }
+            }
+        }
+    }
 }
 
 .list {
     font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
     margin-top: 130px;
-    max-width: 1150px;
+    max-width: 88%;
     margin-left: auto;
     margin-right: auto;
     height: calc(100vh - 195px);
     padding: 10px 26px;
     justify-content: center;
+
+    @include for-phone-only {
+        margin-top: 100px;
+        max-width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0px;
+        justify-content: center;    
+    }
 
     &__title{
         font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
@@ -156,15 +191,34 @@ $dark: #505050;
         margin-left: 25px;    
         font-weight: bold;
         color: $primary;
-        font-size: 32px; 
+        font-size: 32px;
+        
+        @include for-phone-only{
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 30px;
+            margin-left: 15px;    
+            font-weight: bold;
+            color: $primary;
+            font-size: 22px;
+        }
     }
 
     #list__container{
         display: grid;    
         grid-template-rows: auto auto auto;
         grid-gap: 25px;
-        width: 95%;
+        width: 100%;
+        grid-template-columns: calc(33% - 15px) calc(33% - 15px) calc(33% - 15px);
         
+        @include for-phone-only{
+            grid-template-columns: calc(33%) calc(33%) calc(33%);
+            display: grid;    
+            grid-template-rows: calc(45%) calc(45%) calc(45%);
+            grid-gap: 7px 0px;
+            width: 100%;
+        }
+
         .user {
             text-align: center;
             position: relative;
@@ -173,19 +227,42 @@ $dark: #505050;
             background: $white;
             border-radius: 10px;
             width: 96%;
+
+            @include for-phone-only{
+                text-align: center;
+                position: relative;
+                margin-left: 3px;
+                margin-right: 3px;
+                margin-top: 0px;
+                background: $white;
+                border-radius: 10px;                    
+                width: 95%;
+            }
             
             &__figure {
                 padding-top: 40px;
                 padding-bottom: 0px;
                 justify-content: center;
+                
+                @include for-phone-only{
+                    padding-top: 20px;
+                    padding-bottom: 0px;
+                    justify-content: center;
+                }
+            }
 
-                .figure{
-                    &__img{                        
-                        height: 80px;
-                        width: 80px;
+            .figure{
+                &__img{                        
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 100%;
+
+                    @include for-phone-only{
+                        height: 40px;
+                        width: 40px;
                         border-radius: 100%;
                     }
-                }   
+                }
             }
             
             &__edit-icon {
@@ -193,20 +270,41 @@ $dark: #505050;
                 width: auto;
                 position: absolute;
                 top: 15px;
-                right: 15px; 
+                right: 15px;
+                
+                @include for-phone-only{
+                    height: 8px;
+                    width: auto;
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
             }
             &__name {
                 font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
                 font-weight: bold;
                 font-size: 16px;
                 color: $primary;
+
+                @include for-phone-only{
+                    padding-top: 0px;
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: $primary;
+                }
             }
             &__email {
                 padding-bottom: 20px;
                 font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
                 font-weight: bold;
                 font-size: 16px;
-                color: $dark; 
+                color: $dark;
+
+                @include for-phone-only{
+                    font-weight: bold;
+                    font-size: 10px;
+                    color: $dark; 
+                }
             }
         }
     }
@@ -216,127 +314,20 @@ $dark: #505050;
         font-size: 16px;
         text-align: right;
         padding: 0px;
-        width: 95%;
-        font-weight: bold; 
+        width: 100%;
+        font-weight: bold;
+        
+        @include for-phone-only{
+            color: $dark;
+            font-size: 12px;
+            text-align: right;
+            padding: 0px;
+            width: 100%;
+            font-weight: bold;    
+        }
     }
 }
 
-@media (min-width: 770px) {
-    #list__container {    
-    grid-template-columns: calc(50% - 15px) calc(50% - 15px); 
-    } 
-} 
-@media (min-width: 428px) {
-    #list__container {    
-    grid-template-columns: calc(33% - 15px) calc(33% - 15px) calc(33% - 15px); 
-    } 
-}
-@media (max-width: 428px) {
-    .main {
-        margin: 0;
-        background: $gray;
-    
-        .header {
-            background: $primary;
-            z-index: 1;
-            width: 100%;
-            height: 65px;
-            position: fixed;
-            align-items: center;
-            top: 0;
-            display: flex;    
-            justify-content: center;
-
-            &__img {
-                height: 35px;
-                width: auto;
-                align-items: center;
-            }
-        }
-
-        .list{
-            font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-            margin-top: 100px;
-            max-width: 98%;
-            height: auto;
-            padding: 10px 0px;
-            justify-content: center;
-            text-align: center;
-
-            &__title {
-                font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-                margin-top: 0px;
-                margin-bottom: 30px;
-                margin-left: 15px;    
-                font-weight: bold;
-                color: $primary;
-                font-size: 22px;
-            }
-
-            #list__container {
-                grid-template-columns: calc(33% ) calc(33% ) calc(33% ); 
-                display: grid;    
-                grid-template-rows: auto auto auto;
-                grid-gap: 5px;
-                width: 100%;
-                
-                .user{                
-                    text-align: center;
-                    position: relative;
-                    margin-left: 3px;
-                    margin-right: 3px;
-                    margin-top: 0px;
-                    background: $white;
-                    border-radius: 10px;                    
-                    width: 95%;
-                    &__figure {
-                        padding-top: 20px;
-                        padding-bottom: 0px;
-                        justify-content: center;
-
-                        .figure{
-                            &__img{                        
-                                height: 40px;
-                                width: 40px;
-                                border-radius: 100%;
-                            }
-                        }   
-                    }
-
-                    &__edit-icon {
-                        height: 8px;
-                        width: auto;
-                        position: absolute;
-                        top: 5px;
-                        right: 5px; 
-                    }
-                    &__name {
-                        padding-top: 0px;
-                        font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-                        font-weight: bold;
-                        font-size: 10px;
-                        color: $primary;                    
-                    }
-                    &__email {
-                        font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-                        font-weight: bold;
-                        font-size: 10px;
-                        color: $dark; 
-                    }
-                }
-            }
-            #list__info {
-                color: $dark;
-                font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-                font-size: 12px;
-                text-align: right;
-                padding: 0px;
-                width: 95%;
-                font-weight: bold; 
-            }
-        }
-    }    
-}
 @media (min-width: 770px) {
     #list__info {
       padding-right: 10px;

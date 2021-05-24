@@ -4,6 +4,8 @@
 }
 
 .header {
+  display: flex;
+  justify-content: center;
   background: #174DBA;
   z-index: 1;
   width: 100%;
@@ -11,8 +13,19 @@
   position: fixed;
   align-items: center;
   top: 0;
-  display: flex;
-  justify-content: center;
+}
+@media (max-width: 767.98px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    background: #174DBA;
+    z-index: 1;
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    align-items: center;
+    top: 0;
+  }
 }
 .header__img {
   height: 35px;
@@ -23,7 +36,7 @@
 .login {
   font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
   margin-top: 160px;
-  max-width: 1280px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   height: calc(100vh - 195px);
@@ -48,59 +61,69 @@
 .login__container {
   background: #FFFFFF;
   border-radius: 10px;
-  padding: 25px 60px;
+  padding: 5px 10px;
   text-align: center;
   justify-content: center;
-  width: 300px;
+  width: 25%;
 }
-.login__container .container__title {
-  font-size: 48px;
+.login .container__title {
+  font-size: 38px;
   color: #174DBA;
-  margin: 0px;
+  margin: 20px 0px;
   margin-bottom: 40px;
   font-weight: bold;
 }
-.login__container .container__form {
+.login .container__form {
   text-align: left;
 }
-.login__container .container__form .form__input, .login__container .container__form .form__label {
-  font-size: 16px;
+@media (max-width: 767.98px) {
+  .login .container {
+    width: 80%;
+    margin: 0px;
+    flex-wrap: wrap;
+  }
 }
-.login__container .container__form .form__input {
-  border: 1.5px solid #174DBA;
-  width: 92%;
-  padding: 0px 10px;
+.login .container .form__input, .login .container .form__label {
+  font-size: 16px;
+  margin-left: 11%;
+}
+.login .container .form__input {
+  border: 2px solid #174DBA;
+  width: 75%;
   border-radius: 5px;
   height: 35px;
   margin-bottom: 20px;
 }
-.login__container .container__form .form__label {
+.login .container .form__label {
   color: #174DBA;
-  font-weight: normal;
+  font-weight: bold;
 }
-.login__container .container__form .form__entrar {
+.login .container .form__entrar {
   background: #174DBA;
   font-size: 16px;
   font-weight: bold;
   color: #EFF0F3;
-  border: 1.5px solid #174DBA;
+  border: 2px solid #174DBA;
   border-radius: 5px;
-  margin-top: 30px;
-  width: 100%;
+  margin-top: 20px;
+  margin-left: 12%;
+  margin-bottom: 0px;
+  width: 75%;
   position: relative;
   height: 40px;
 }
-.login__container .container__form .form__error {
+.login .container .form__error {
   font-size: 14px;
   color: #f06565;
   opacity: 0;
-  margin: 0px;
+  margin-left: 12%;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
-.login__container .container__form .form__spinner {
+.login .container .form__spinner {
   display: none;
 }
-.login__container .container__form .form__spinner:after {
+.login .container .form__spinner:after {
   content: "";
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -120,12 +143,22 @@
 .list {
   font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
   margin-top: 130px;
-  max-width: 1150px;
+  max-width: 88%;
   margin-left: auto;
   margin-right: auto;
   height: calc(100vh - 195px);
   padding: 10px 26px;
   justify-content: center;
+}
+@media (max-width: 767.98px) {
+  .list {
+    margin-top: 100px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 0px;
+    justify-content: center;
+  }
 }
 .list__title {
   font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
@@ -135,11 +168,32 @@
   color: #174DBA;
   font-size: 32px;
 }
+@media (max-width: 767.98px) {
+  .list__title {
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    font-weight: bold;
+    color: #174DBA;
+    font-size: 22px;
+  }
+}
 .list #list__container {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-gap: 25px;
-  width: 95%;
+  width: 100%;
+  grid-template-columns: calc(33% - 15px) calc(33% - 15px) calc(33% - 15px);
+}
+@media (max-width: 767.98px) {
+  .list #list__container {
+    grid-template-columns: calc(33%) calc(33%) calc(33%);
+    display: grid;
+    grid-template-rows: calc(45%) calc(45%) calc(45%);
+    grid-gap: 7px 0px;
+    width: 100%;
+  }
 }
 .list #list__container .user {
   text-align: center;
@@ -150,103 +204,8 @@
   border-radius: 10px;
   width: 96%;
 }
-.list #list__container .user__figure {
-  padding-top: 40px;
-  padding-bottom: 0px;
-  justify-content: center;
-}
-.list #list__container .user__figure .figure__img {
-  height: 80px;
-  width: 80px;
-  border-radius: 100%;
-}
-.list #list__container .user__edit-icon {
-  height: 20px;
-  width: auto;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-.list #list__container .user__name {
-  font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  color: #174DBA;
-}
-.list #list__container .user__email {
-  padding-bottom: 20px;
-  font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  color: #505050;
-}
-.list #list__info {
-  color: #505050;
-  font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-  font-size: 16px;
-  text-align: right;
-  padding: 0px;
-  width: 95%;
-  font-weight: bold;
-}
-
-@media (min-width: 770px) {
-  #list__container {
-    grid-template-columns: calc(50% - 15px) calc(50% - 15px);
-  }
-}
-@media (min-width: 428px) {
-  #list__container {
-    grid-template-columns: calc(33% - 15px) calc(33% - 15px) calc(33% - 15px);
-  }
-}
-@media (max-width: 428px) {
-  .main {
-    margin: 0;
-    background: #EFF0F3;
-  }
-  .main .header {
-    background: #174DBA;
-    z-index: 1;
-    width: 100%;
-    height: 65px;
-    position: fixed;
-    align-items: center;
-    top: 0;
-    display: flex;
-    justify-content: center;
-  }
-  .main .header__img {
-    height: 35px;
-    width: auto;
-    align-items: center;
-  }
-  .main .list {
-    font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-    margin-top: 100px;
-    max-width: 98%;
-    height: auto;
-    padding: 10px 0px;
-    justify-content: center;
-    text-align: center;
-  }
-  .main .list__title {
-    font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-    margin-top: 0px;
-    margin-bottom: 30px;
-    margin-left: 15px;
-    font-weight: bold;
-    color: #174DBA;
-    font-size: 22px;
-  }
-  .main .list #list__container {
-    grid-template-columns: calc(33% ) calc(33% ) calc(33% );
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-gap: 5px;
-    width: 100%;
-  }
-  .main .list #list__container .user {
+@media (max-width: 767.98px) {
+  .list #list__container .user {
     text-align: center;
     position: relative;
     margin-left: 3px;
@@ -256,46 +215,95 @@
     border-radius: 10px;
     width: 95%;
   }
-  .main .list #list__container .user__figure {
+}
+.list #list__container .user__figure {
+  padding-top: 40px;
+  padding-bottom: 0px;
+  justify-content: center;
+}
+@media (max-width: 767.98px) {
+  .list #list__container .user__figure {
     padding-top: 20px;
     padding-bottom: 0px;
     justify-content: center;
   }
-  .main .list #list__container .user__figure .figure__img {
+}
+.list #list__container .user .figure__img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+}
+@media (max-width: 767.98px) {
+  .list #list__container .user .figure__img {
     height: 40px;
     width: 40px;
     border-radius: 100%;
   }
-  .main .list #list__container .user__edit-icon {
+}
+.list #list__container .user__edit-icon {
+  height: 20px;
+  width: auto;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+@media (max-width: 767.98px) {
+  .list #list__container .user__edit-icon {
     height: 8px;
     width: auto;
     position: absolute;
     top: 5px;
     right: 5px;
   }
-  .main .list #list__container .user__name {
+}
+.list #list__container .user__name {
+  font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #174DBA;
+}
+@media (max-width: 767.98px) {
+  .list #list__container .user__name {
     padding-top: 0px;
-    font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
     font-weight: bold;
     font-size: 10px;
     color: #174DBA;
   }
-  .main .list #list__container .user__email {
-    font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+}
+.list #list__container .user__email {
+  padding-bottom: 20px;
+  font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: #505050;
+}
+@media (max-width: 767.98px) {
+  .list #list__container .user__email {
     font-weight: bold;
     font-size: 10px;
     color: #505050;
   }
-  .main .list #list__info {
+}
+.list #list__info {
+  color: #505050;
+  font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+  font-size: 16px;
+  text-align: right;
+  padding: 0px;
+  width: 100%;
+  font-weight: bold;
+}
+@media (max-width: 767.98px) {
+  .list #list__info {
     color: #505050;
-    font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
     font-size: 12px;
     text-align: right;
     padding: 0px;
-    width: 95%;
+    width: 100%;
     font-weight: bold;
   }
 }
+
 @media (min-width: 770px) {
   #list__info {
     padding-right: 10px;
