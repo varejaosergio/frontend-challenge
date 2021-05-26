@@ -14,6 +14,15 @@ $dark: #505050;
 @mixin for-desktop-only {
     @media (min-width: 1200px) { @content; }
 }
+
+@function calculaRem($size) {
+    @return $size / 16px * 1rem;
+}
+
+@mixin fontSize($size) {
+    font-size: calculaRem($size);
+}
+
 .main {
     margin: 0;
     background: $gray;
@@ -88,7 +97,7 @@ $dark: #505050;
     }
     .container {
         &__title {    
-            font-size:38px;
+            @include fontSize(38px);
             color:$primary;
             margin:20px 0px;
             margin-bottom:40px;
@@ -106,7 +115,7 @@ $dark: #505050;
         
         .form {
             &__input, &__label {
-                font-size:16px;
+                @include fontSize(16px);
                 margin-left: 11%;          
             }
             
@@ -125,7 +134,7 @@ $dark: #505050;
             
             &__entrar {
                 background:$primary;
-                font-size: 16px;
+                @include fontSize(16px);
                 font-weight: bold;
                 color:$gray;
                 border:2px solid $primary;
@@ -139,7 +148,7 @@ $dark: #505050;
             }
             
             &__error{
-                font-size:14px;   
+                @include fontSize(14px);   
                 color:#f06565;
                 opacity:0;
                 margin-left: 12%;
@@ -196,7 +205,7 @@ $dark: #505050;
         margin-left: 25px;    
         font-weight: bold;
         color: $primary;
-        font-size: 32px;
+        @include fontSize(32px);
         
         @include for-phone-only{
             text-align: left;
@@ -205,7 +214,7 @@ $dark: #505050;
             margin-left: 15px;    
             font-weight: bold;
             color: $primary;
-            font-size: 22px;
+            @include fontSize(22px);
         }
     }
 
@@ -288,13 +297,13 @@ $dark: #505050;
             &__name {
                 font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
                 font-weight: bold;
-                font-size: 16px;
+                @include fontSize(16px);
                 color: $primary;
 
                 @include for-phone-only{
                     padding-top: 0px;
                     font-weight: bold;
-                    font-size: 10px;
+                    @include fontSize(10px);
                     color: $primary;
                 }
             }
@@ -302,12 +311,12 @@ $dark: #505050;
                 padding-bottom: 20px;
                 font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
                 font-weight: bold;
-                font-size: 16px;
+                @include fontSize(16px);
                 color: $dark;
                 
                 @include for-phone-only{
                     font-weight: bold;
-                    font-size: 8px;
+                    @include fontSize(8px);
                     color: $dark; 
                 }
             }
@@ -316,7 +325,7 @@ $dark: #505050;
     #list__info {
         color: $dark;
         font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
-        font-size: 16px;
+        @include fontSize(16px);
         text-align: right;
         padding: 0px;
         width: 100%;
@@ -324,7 +333,7 @@ $dark: #505050;
         
         @include for-phone-only{
             color: $dark;
-            font-size: 12px;
+            @include fontSize(12px);
             text-align: right;
             padding: 0px;
             width: 99%;
