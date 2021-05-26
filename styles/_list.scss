@@ -1,0 +1,174 @@
+.list {
+    font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+    margin-top: 130px;
+    max-width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    height: calc(100vh - 195px);
+    padding: 10px 26px;
+    justify-content: center;
+
+    @include for-phone-only {
+        margin-top: 100px;
+        max-width: 100%;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 0px;
+        justify-content: center;    
+    }
+
+    &__title{
+        font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+        margin-top: 25px;
+        margin-left: 25px;    
+        font-weight: bold;
+        color: $primary;
+        @include fontSize(32px);
+        
+        @include for-phone-only{
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 30px;
+            margin-left: 15px;    
+            font-weight: bold;
+            color: $primary;
+            @include fontSize(22px);
+        }
+    }
+
+    #list__container{
+        display: grid;    
+        grid-template-rows: auto auto auto;
+        grid-gap: 25px;
+        width: 100%;
+        grid-template-columns: calc(33% - 15px) calc(33% - 15px) calc(33% - 15px);
+        
+        @include for-phone-only{
+            grid-template-columns: calc(33%) calc(33%) calc(33%);
+            display: grid;    
+            grid-template-rows: calc(45%) calc(45%) calc(45%);
+            grid-gap: 7px 0px;
+            width: 100%;
+        }
+
+        .user {
+            text-align: center;
+            position: relative;
+            margin-left: 20px;
+            margin-top: 10px;
+            background: $white;
+            border-radius: 10px;
+            width: 96%;
+
+            @include for-phone-only{
+                text-align: center;
+                position: relative;
+                margin-left: 3px;
+                margin-right: 3px;
+                margin-top: 0px;
+                background: $white;
+                border-radius: 10px;                    
+                width: 95%;
+            }
+            
+            &__figure {
+                padding-top: 40px;
+                padding-bottom: 0px;
+                justify-content: center;
+                
+                @include for-phone-only{
+                    padding-top: 20px;
+                    padding-bottom: 0px;
+                    justify-content: center;
+                }
+            }
+
+            .figure{
+                &__img{                        
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 100%;
+
+                    @include for-phone-only{
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 100%;
+                    }
+                }
+            }
+            
+            &__edit-icon {
+                height: 20px;
+                width: auto;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                
+                @include for-phone-only{
+                    height: 8px;
+                    width: auto;
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+            }
+            &__name {
+                font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+                font-weight: bold;
+                @include fontSize(16px);
+                color: $primary;
+
+                @include for-phone-only{
+                    padding-top: 0px;
+                    font-weight: bold;
+                    @include fontSize(10px);
+                    color: $primary;
+                }
+            }
+            &__email {
+                padding-bottom: 20px;
+                font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+                font-weight: bold;
+                @include fontSize(16px);
+                color: $dark;
+                
+                @include for-phone-only{
+                    font-weight: bold;
+                    @include fontSize(8px);
+                    color: $dark; 
+                }
+            }
+        }
+    }
+    #list__info {
+        color: $dark;
+        font-family: "Helvetica Neue", "Helvetica", "Open Sans", Arial, sans-serif;
+        @include fontSize(16px);
+        text-align: right;
+        padding: 0px;
+        width: 100%;
+        font-weight: bold;
+        
+        @include for-phone-only{
+            color: $dark;
+            @include fontSize(12px);
+            text-align: right;
+            padding: 0px;
+            width: 99%;
+            font-weight: bold;    
+        }
+    }
+}
+
+@media (min-width: 770px) {
+    #list__info {
+      padding-right: 10px;
+      text-align: right; 
+    } 
+}
+@media (max-width: 768px) {
+    #list__info {
+      padding-right: 0px;
+      text-align: right; 
+    } 
+}
